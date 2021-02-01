@@ -1,9 +1,8 @@
 import { Client, Message } from 'discord.js';
-import { getEnvVar } from '../util/env';
+import config from '../config/config';
 import onRegistrationAttempt from '../registration/register';
 
-const REGISTRATION_CHANNEL =
-    getEnvVar('BOT_REGISTRATION_CHANNEL', 'Registration Channel ID') || '';
+const REGISTRATION_CHANNEL = config.registration.channel;
 
 export default function onMessage(client: Client, msg: Message): void {
     // Check if message was in a guild or in a DM

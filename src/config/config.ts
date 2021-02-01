@@ -5,6 +5,7 @@ import { readFileSync } from 'fs';
 export interface Config {
     bot: Bot;
     roles: Roles;
+    registration: Registration;
 }
 
 export interface Bot {
@@ -14,6 +15,10 @@ export interface Bot {
 export interface Roles {
     firstJoin: Snowflake;
     registered: Snowflake;
+}
+
+export interface Registration {
+    channel: Snowflake;
 }
 
 const config: Config = JSON.parse(
