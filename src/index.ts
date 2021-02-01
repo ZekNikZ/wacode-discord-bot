@@ -7,6 +7,7 @@ import * as delayedDeletion from './messages/delayed-deletion';
 import * as registrationDB from './db/registrations/db';
 import { appLogger, botLogger } from './util/log';
 import { CommandoClient } from 'discord.js-commando';
+import config from './config/config';
 import { getEnvVar } from './util/env';
 import onMessage from './events/message';
 import path from 'path';
@@ -38,6 +39,9 @@ client.on('ready', () => {
             type: 'COMPETING',
         },
     });
+    client.guilds.cache.forEach((guild) =>
+        guild.me?.setNickname(config.bot.nickname)
+    );
 });
 
 // Logging

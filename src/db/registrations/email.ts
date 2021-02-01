@@ -65,6 +65,7 @@ export async function linkDiscordToRegistration(
 ): Promise<void> {
     const sheet = db().sheetsByTitle['Discord Accounts'];
 
+    // Add the record in the spreadsheet
     await sheet.addRow([
         email,
         `${user.username}#${user.discriminator}`,
