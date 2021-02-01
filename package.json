@@ -7,6 +7,9 @@
     "author": "Matthew McCaskill",
     "license": "MIT",
     "private": true,
+    "engines": {
+        "node": "15.x"
+    },
     "scripts": {
         "build": "tsc",
         "build-watch": "tsc -w",
