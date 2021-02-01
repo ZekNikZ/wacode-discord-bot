@@ -1,6 +1,6 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
-import { getEnvVar } from '../../util/env';
 import { appLogger } from '../../util/log';
+import { getEnvVar } from '../../util/env';
 
 let doc: GoogleSpreadsheet | undefined = undefined;
 

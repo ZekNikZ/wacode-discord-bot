@@ -1,4 +1,4 @@
-import { DMChannel, Message, NewsChannel, TextChannel } from 'discord.js';
+import { DMChannel, Message } from 'discord.js';
 import commando, { CommandoClient } from 'discord.js-commando';
 import { deleteLaterAsync } from '../../messages/delayed-deletion';
 

@@ -1,5 +1,4 @@
 import { User } from 'discord.js';
-import { appLogger } from '../../util/log';
 import db from './db';
 
 export async function isEmailUsedInRegistration(

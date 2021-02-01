@@ -4,11 +4,10 @@ import {
     isEmailUsedInRegistration,
     linkDiscordToRegistration,
 } from '../db/registrations/email';
-import { commandLogger } from '../util/log';
 import { deleteLater } from '../messages/delayed-deletion';
 import { validate as isEmail } from 'email-validator';
 
-async function linkEmail(client: Client, msg: Message): Promise<void> {
+async function linkEmail(msg: Message): Promise<void> {
     if (await isEmailUsedInRegistration(msg.content.trim())) {
         if (await isEmailAlreadyRegistered(msg.content.trim())) {
             deleteLater(
@@ -46,7 +45,7 @@ export default async function onRegistrationAttempt(
     // Check if the message is an email
     if (isEmail(msg.content.trim())) {
         // Message is an email
-        await linkEmail(client, msg);
+        await linkEmail(msg);
     } else {
         // Message is NOT an email
         deleteLater(

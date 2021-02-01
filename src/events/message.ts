@@ -1,6 +1,5 @@
 import { Client, Message } from 'discord.js';
 import { getEnvVar } from '../util/env';
-import { commandLogger as log } from '../util/log';
 import onRegistrationAttempt from '../registration/register';
 
 const REGISTRATION_CHANNEL =
