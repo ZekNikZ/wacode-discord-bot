@@ -9,6 +9,7 @@ import { appLogger, botLogger } from './util/log';
 import { CommandoClient } from 'discord.js-commando';
 import config from './config/config';
 import { getEnvVar } from './util/env';
+import onFirstJoin from './events/first-join';
 import onMessage from './events/message';
 import path from 'path';
 
@@ -51,6 +52,7 @@ client.on('debug', (e) => botLogger.debug(e));
 
 // Custom event handler
 client.on('message', onMessage.bind(undefined, client));
+client.on('guildMemberAdd', onFirstJoin.bind(undefined, client));
 
 // Delayed message deletion
 delayedDeletion.setup();
