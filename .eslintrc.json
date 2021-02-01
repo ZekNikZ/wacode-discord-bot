@@ -13,7 +13,7 @@
     "plugins": ["@typescript-eslint"],
     "rules": {
         "brace-style": ["error"],
-        "class-methods-use-this": ["error"],
+        "class-methods-use-this": ["error", { "exceptMethods": ["run"] }],
         "comma-style": ["error"],
         "curly": ["error"],
         "default-case": ["warn"],
